@@ -5,8 +5,13 @@ from django.shortcuts import redirect
 from django.db.models import Max
 from .models import BonLivraison, LigneBonLivraison
 from .models import Facture, LigneFacture, Devis, LigneDevis
+from  django.contrib.auth.models import User, Group
 
 
+
+# ---  Masquer les Groupes et les utilisateurs
+#admin.site.unregister(User)
+#admin.site.unregister(Group)
 # ===============================
 # INLINE LIGNES DEVIS
 # ===============================
@@ -287,8 +292,6 @@ class FactureAdmin(admin.ModelAdmin):
 
         return redirect("/admin/ventes/facture/")
 
-    class Media:
-        js = ("admin/js/client_auto.js",)
 
 
 # ===============================

@@ -1,4 +1,4 @@
-alert("JS chargé !");
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const clientSelect = document.getElementById("id_client");

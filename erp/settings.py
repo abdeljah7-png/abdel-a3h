@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,9 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'clients',
     'produits',
+    'clients',
+    'fournisseurs',
+    'achats',
     'ventes',
+    'reglements',
+    'comptes',
     'cbc',
 ]
 MIDDLEWARE = [
@@ -127,4 +130,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
