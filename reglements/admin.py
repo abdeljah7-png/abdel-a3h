@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ReglementClient, ReglementFournisseur
+from .models import ReglementClient, ReglementFournisseur,MouvementCompte
 from django.urls import reverse
 from django.utils.html import format_html
 
@@ -36,3 +36,20 @@ class ReglementFournisseurAdmin(admin.ModelAdmin):
         )
 
     imprimer_quittance.short_description="quittance"
+
+
+#----- mvtcpte
+
+@admin.register(MouvementCompte)
+class MouvementCompteAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "date",
+        "type_mouvement",
+        "compte",
+        "montant"
+    )
+
+    list_filter = ("type_mouvement", "compte")
+
+    search_fields = ("reference",)

@@ -92,3 +92,38 @@ class ReglementFournisseur(models.Model):
 
     def __str__(self):
         return self.numero
+
+#-------- Class mouvement des comptes
+
+from django.db import models
+
+class MouvementCompte(models.Model):
+
+    TYPE_MOUVEMENT = (
+        ('entree', 'Entrée'),
+        ('sortie', 'Sortie'),
+    )
+
+    date = models.DateField()
+
+    type_mouvement = models.CharField(
+        max_length=10,
+        choices=TYPE_MOUVEMENT
+    )
+
+    compte = models.ForeignKey(
+        'comptes.Compte',
+        on_delete=models.PROTECT,
+        related_name='mouvements'
+    )
+
+    montant = models.DecimalField(max_digits=12, decimal_places=3)
+
+    reference = models.CharField(max_length=100, blank=True)
+
+    observation = models.TextField(blank=True)
+
+    origine = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return f"{self.date} - {self.compte} - {self.montant}"
