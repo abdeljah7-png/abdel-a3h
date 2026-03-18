@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 # ----------------------
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-default-key')  # utiliser variable d'environnement en prod
+
 DEBUG = False  # ⚠️ Toujours False en production
 
 ALLOWED_HOSTS = ['.onrender.com']
