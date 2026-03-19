@@ -7,7 +7,11 @@ from pathlib import Path
 import os
 import dj_database_url
 
-# ----------------------
+from dotenv import load_dotenv
+load_dotenv()
+
+
+ ----------------------
 # BASE DIRECTORY
 # ----------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ----------------------
 # SECURITY
 # ----------------------
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-default-key')  # utiliser variable d'environnement en prod
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') # utiliser variable d'environnement en prod
 
 DEBUG = False  # ⚠️ Toujours False en production
 
