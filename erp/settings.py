@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-default-key') 
 
 DEBUG = False  # ⚠️ Toujours False en production
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['fattah.pythonanywhere.com']
 
 # ----------------------
 # APPLICATIONS
