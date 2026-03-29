@@ -33,7 +33,7 @@ class DevisAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            "ventes/client_auto.js",
+            "ventes/js/client_auto.js",
         )
 
     
@@ -136,7 +136,7 @@ class FactureAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            "ventes/client_auto.js",
+            "ventes/js/client_auto.js",
         )
 
 
@@ -317,7 +317,7 @@ class LigneBonLivraisonInline(admin.TabularInline):
 
     class Media:
         js = (
-            "ventes/client_auto.js",
+            "ventes/js/client_auto.js",
         )
 
 # ===============================
