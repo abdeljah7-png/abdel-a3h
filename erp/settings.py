@@ -19,11 +19,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ----------------------
 # SECURITY
 # ----------------------
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') # utiliser variable d'environnement en prod
+SECRET_KEY = os.environ.get('django-insecure-wssr@9shr^#$%ldu64l3%@j^#d5704i++(k&4#$2m-j+0vbx7x') # utiliser variable d'environnement en prod
 
 DEBUG = False  # ⚠️ Toujours False en production
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['fattah.pythonanywhere.com']
 
 # ----------------------
 # APPLICATIONS
